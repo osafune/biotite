@@ -1,0 +1,131 @@
+Flow report for sample_ledfluctuator
+Thu Jun 27 23:43:35 2019
+Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------+
+; Flow Summary                                                                                  ;
++------------------------------------+----------------------------------------------------------+
+; Flow Status                        ; Successful - Thu Jun 27 23:43:25 2019                    ;
+; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
+; Revision Name                      ; sample_ledfluctuator                                     ;
+; Top-level Entity Name              ; sample_ledfluctuator                                     ;
+; Family                             ; MAX 10                                                   ;
+; Device                             ; 10M08SCE144C8G                                           ;
+; Timing Models                      ; Final                                                    ;
+; Total logic elements               ; 165 / 8,064 ( 2 % )                                      ;
+;     Total combinational functions  ; 163 / 8,064 ( 2 % )                                      ;
+;     Dedicated logic registers      ; 97 / 8,064 ( 1 % )                                       ;
+; Total registers                    ; 97                                                       ;
+; Total pins                         ; 70 / 101 ( 69 % )                                        ;
+; Total virtual pins                 ; 0                                                        ;
+; Total memory bits                  ; 0 / 387,072 ( 0 % )                                      ;
+; Embedded Multiplier 9-bit elements ; 2 / 48 ( 4 % )                                           ;
+; Total PLLs                         ; 0 / 1 ( 0 % )                                            ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                                            ;
+; ADC blocks                         ; 0                                                        ;
++------------------------------------+----------------------------------------------------------+
+
+
++------------------------------------------+
+; Flow Settings                            ;
++-------------------+----------------------+
+; Option            ; Setting              ;
++-------------------+----------------------+
+; Start date & time ; 06/27/2019 23:42:19  ;
+; Main task         ; Compilation          ;
+; Revision Name     ; sample_ledfluctuator ;
++-------------------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 53849985591009.156164653706064         ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:22     ; 1.0                     ; 4825 MB             ; 00:00:38                           ;
+; Fitter                    ; 00:00:23     ; 1.0                     ; 5631 MB             ; 00:00:18                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4693 MB             ; 00:00:02                           ;
+; Power Analyzer            ; 00:00:14     ; 1.0                     ; 4846 MB             ; 00:00:13                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 1.0                     ; 4802 MB             ; 00:00:08                           ;
+; Total                     ; 00:01:10     ; --                      ; --                  ; 00:01:19                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; BRUENNHILDE      ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; BRUENNHILDE      ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; BRUENNHILDE      ; Windows 10 ; 10.0       ; x86_64         ;
+; Power Analyzer            ; BRUENNHILDE      ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; BRUENNHILDE      ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off sample_ledfluctuator -c sample_ledfluctuator
+quartus_fit --read_settings_files=off --write_settings_files=off sample_ledfluctuator -c sample_ledfluctuator
+quartus_asm --read_settings_files=off --write_settings_files=off sample_ledfluctuator -c sample_ledfluctuator
+quartus_pow --read_settings_files=off --write_settings_files=off sample_ledfluctuator -c sample_ledfluctuator
+quartus_sta sample_ledfluctuator -c sample_ledfluctuator
+
+
+

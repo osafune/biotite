@@ -1,0 +1,18 @@
+Fitter Status : Successful - Thu Jun 27 23:43:04 2019
+Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
+Revision Name : sample_ledfluctuator
+Top-level Entity Name : sample_ledfluctuator
+Family : MAX 10
+Device : 10M08SCE144C8G
+Timing Models : Final
+Total logic elements : 165 / 8,064 ( 2 % )
+    Total combinational functions : 163 / 8,064 ( 2 % )
+    Dedicated logic registers : 97 / 8,064 ( 1 % )
+Total registers : 97
+Total pins : 70 / 101 ( 69 % )
+Total virtual pins : 0
+Total memory bits : 0 / 387,072 ( 0 % )
+Embedded Multiplier 9-bit elements : 2 / 48 ( 4 % )
+Total PLLs : 0 / 1 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0

@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Thu Jun 27 23:42:40 2019
+Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
+Revision Name : sample_ledfluctuator
+Top-level Entity Name : sample_ledfluctuator
+Family : MAX 10
+Total logic elements : 163
+    Total combinational functions : 162
+    Dedicated logic registers : 97
+Total registers : 97
+Total pins : 70
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 2
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

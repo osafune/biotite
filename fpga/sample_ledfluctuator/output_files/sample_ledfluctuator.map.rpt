@@ -1,0 +1,476 @@
+Analysis & Synthesis report for sample_ledfluctuator
+Thu Jun 27 23:42:40 2019
+Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: fluctuator:u|LPM_MULT:u_mult
+ 14. lpm_mult Parameter Settings by Entity Instance
+ 15. Port Connectivity Checks: "fluctuator:u"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                                  ;
++------------------------------------+----------------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jun 27 23:42:40 2019                    ;
+; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
+; Revision Name                      ; sample_ledfluctuator                                     ;
+; Top-level Entity Name              ; sample_ledfluctuator                                     ;
+; Family                             ; MAX 10                                                   ;
+; Total logic elements               ; 163                                                      ;
+;     Total combinational functions  ; 162                                                      ;
+;     Dedicated logic registers      ; 97                                                       ;
+; Total registers                    ; 97                                                       ;
+; Total pins                         ; 70                                                       ;
+; Total virtual pins                 ; 0                                                        ;
+; Total memory bits                  ; 0                                                        ;
+; Embedded Multiplier 9-bit elements ; 2                                                        ;
+; Total PLLs                         ; 0                                                        ;
+; UFM blocks                         ; 0                                                        ;
+; ADC blocks                         ; 0                                                        ;
++------------------------------------+----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++----------------------------------------------------------------------------+----------------------+----------------------+
+; Option                                                                     ; Setting              ; Default Value        ;
++----------------------------------------------------------------------------+----------------------+----------------------+
+; Device                                                                     ; 10M08SCE144C8G       ;                      ;
+; Top-level entity name                                                      ; sample_ledfluctuator ; sample_ledfluctuator ;
+; Family name                                                                ; MAX 10               ; Cyclone V            ;
+; Use smart compilation                                                      ; Off                  ; Off                  ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                   ; On                   ;
+; Enable compact report table                                                ; Off                  ; Off                  ;
+; Restructure Multiplexers                                                   ; Auto                 ; Auto                 ;
+; Create Debugging Nodes for IP Cores                                        ; Off                  ; Off                  ;
+; Preserve fewer node names                                                  ; On                   ; On                   ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable               ; Enable               ;
+; Verilog Version                                                            ; Verilog_2001         ; Verilog_2001         ;
+; VHDL Version                                                               ; VHDL_1993            ; VHDL_1993            ;
+; State Machine Processing                                                   ; Auto                 ; Auto                 ;
+; Safe State Machine                                                         ; Off                  ; Off                  ;
+; Extract Verilog State Machines                                             ; On                   ; On                   ;
+; Extract VHDL State Machines                                                ; On                   ; On                   ;
+; Ignore Verilog initial constructs                                          ; Off                  ; Off                  ;
+; Iteration limit for constant Verilog loops                                 ; 5000                 ; 5000                 ;
+; Iteration limit for non-constant Verilog loops                             ; 250                  ; 250                  ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                   ; On                   ;
+; Infer RAMs from Raw Logic                                                  ; On                   ; On                   ;
+; Parallel Synthesis                                                         ; On                   ; On                   ;
+; DSP Block Balancing                                                        ; Auto                 ; Auto                 ;
+; NOT Gate Push-Back                                                         ; On                   ; On                   ;
+; Power-Up Don't Care                                                        ; On                   ; On                   ;
+; Remove Redundant Logic Cells                                               ; Off                  ; Off                  ;
+; Remove Duplicate Registers                                                 ; On                   ; On                   ;
+; Ignore CARRY Buffers                                                       ; Off                  ; Off                  ;
+; Ignore CASCADE Buffers                                                     ; Off                  ; Off                  ;
+; Ignore GLOBAL Buffers                                                      ; Off                  ; Off                  ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                  ; Off                  ;
+; Ignore LCELL Buffers                                                       ; Off                  ; Off                  ;
+; Ignore SOFT Buffers                                                        ; On                   ; On                   ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                  ; Off                  ;
+; Optimization Technique                                                     ; Balanced             ; Balanced             ;
+; Carry Chain Length                                                         ; 70                   ; 70                   ;
+; Auto Carry Chains                                                          ; On                   ; On                   ;
+; Auto Open-Drain Pins                                                       ; On                   ; On                   ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                  ; Off                  ;
+; Auto ROM Replacement                                                       ; On                   ; On                   ;
+; Auto RAM Replacement                                                       ; On                   ; On                   ;
+; Auto DSP Block Replacement                                                 ; On                   ; On                   ;
+; Auto Shift Register Replacement                                            ; Auto                 ; Auto                 ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                 ; Auto                 ;
+; Auto Clock Enable Replacement                                              ; On                   ; On                   ;
+; Strict RAM Replacement                                                     ; Off                  ; Off                  ;
+; Allow Synchronous Control Signals                                          ; On                   ; On                   ;
+; Force Use of Synchronous Clear Signals                                     ; Off                  ; Off                  ;
+; Auto RAM Block Balancing                                                   ; On                   ; On                   ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                  ; Off                  ;
+; Auto Resource Sharing                                                      ; Off                  ; Off                  ;
+; Allow Any RAM Size For Recognition                                         ; Off                  ; Off                  ;
+; Allow Any ROM Size For Recognition                                         ; Off                  ; Off                  ;
+; Allow Any Shift Register Size For Recognition                              ; Off                  ; Off                  ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                   ; On                   ;
+; Ignore translate_off and synthesis_off directives                          ; Off                  ; Off                  ;
+; Timing-Driven Synthesis                                                    ; On                   ; On                   ;
+; Report Parameter Settings                                                  ; On                   ; On                   ;
+; Report Source Assignments                                                  ; On                   ; On                   ;
+; Report Connectivity Checks                                                 ; On                   ; On                   ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                  ; Off                  ;
+; Synchronization Register Chain Length                                      ; 2                    ; 2                    ;
+; Power Optimization During Synthesis                                        ; Normal compilation   ; Normal compilation   ;
+; HDL message level                                                          ; Level2               ; Level2               ;
+; Suppress Register Optimization Related Messages                            ; Off                  ; Off                  ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                 ; 5000                 ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                 ; 5000                 ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                  ; 100                  ;
+; Clock MUX Protection                                                       ; On                   ; On                   ;
+; Auto Gated Clock Conversion                                                ; Off                  ; Off                  ;
+; Block Design Naming                                                        ; Auto                 ; Auto                 ;
+; SDC constraint protection                                                  ; Off                  ; Off                  ;
+; Synthesis Effort                                                           ; Auto                 ; Auto                 ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                   ; On                   ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                  ; Off                  ;
+; Analysis & Synthesis Message Level                                         ; Medium               ; Medium               ;
+; Disable Register Merging Across Hierarchies                                ; Auto                 ; Auto                 ;
+; Resource Aware Inference For Block RAM                                     ; On                   ; On                   ;
++----------------------------------------------------------------------------+----------------------+----------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; fluctuator.vhd                   ; yes             ; User VHDL File               ; C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/fluctuator.vhd           ;         ;
+; sample_ledfluctuator.vhd         ; yes             ; User VHDL File               ; C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/sample_ledfluctuator.vhd ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/develop/quartus/17.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; c:/develop/quartus/17.1/quartus/libraries/megafunctions/aglobal171.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/develop/quartus/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/develop/quartus/17.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/develop/quartus/17.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/develop/quartus/17.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; db/mult_adp.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/db/mult_adp.tdf          ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 163            ;
+;                                             ;                ;
+; Total combinational functions               ; 162            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 40             ;
+;     -- 3 input functions                    ; 64             ;
+;     -- <=2 input functions                  ; 58             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 105            ;
+;     -- arithmetic mode                      ; 57             ;
+;                                             ;                ;
+; Total registers                             ; 97             ;
+;     -- Dedicated logic registers            ; 97             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 70             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 2              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 97             ;
+; Total fan-out                               ; 985            ;
+; Average fan-out                             ; 2.23           ;
++---------------------------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                        ;
++------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                        ; Entity Name          ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------+----------------------+--------------+
+; |sample_ledfluctuator              ; 162 (43)            ; 97 (28)                   ; 0           ; 0          ; 2            ; 0       ; 1         ; 70   ; 0            ; 0          ; |sample_ledfluctuator                                                      ; sample_ledfluctuator ; work         ;
+;    |fluctuator:u|                  ; 119 (119)           ; 69 (69)                   ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |sample_ledfluctuator|fluctuator:u                                         ; fluctuator           ; work         ;
+;       |lpm_mult:u_mult|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |sample_ledfluctuator|fluctuator:u|lpm_mult:u_mult                         ; lpm_mult             ; work         ;
+;          |mult_adp:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |sample_ledfluctuator|fluctuator:u|lpm_mult:u_mult|mult_adp:auto_generated ; mult_adp             ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; clkdiv_count_reg[16..26]               ; Lost fanout        ;
+; Total Number of Removed Registers = 11 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 97    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 18    ;
+; Number of registers using Asynchronous Clear ; 68    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 77    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; fluctuator:u|x_reg[11]                  ; 5       ;
+; fluctuator:u|x_reg[10]                  ; 5       ;
+; fluctuator:u|x_reg[7]                   ; 5       ;
+; fluctuator:u|x_reg[5]                   ; 5       ;
+; fluctuator:u|x_reg[1]                   ; 4       ;
+; fluctuator:u|x_reg[31]                  ; 3       ;
+; fluctuator:u|state                      ; 20      ;
+; fluctuator:u|x_reg[28]                  ; 2       ;
+; fluctuator:u|x_reg[15]                  ; 5       ;
+; fluctuator:u|x_reg[25]                  ; 2       ;
+; fluctuator:u|x_reg[23]                  ; 2       ;
+; fluctuator:u|x_reg[22]                  ; 2       ;
+; fluctuator:u|x_reg[20]                  ; 2       ;
+; fluctuator:u|x_reg[18]                  ; 4       ;
+; fluctuator:u|x_reg[17]                  ; 5       ;
+; Total number of inverted registers = 15 ;         ;
++-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; Yes        ; |sample_ledfluctuator|fluctuator:u|mul_a_reg[15] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |sample_ledfluctuator|fluctuator:u|Add1          ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |sample_ledfluctuator|fluctuator:u|Add1          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluctuator:u|LPM_MULT:u_mult       ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 18       ; Signed Integer      ;
+; LPM_WIDTHB                                     ; 18       ; Signed Integer      ;
+; LPM_WIDTHP                                     ; 36       ; Signed Integer      ;
+; LPM_WIDTHR                                     ; 0        ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Signed Integer      ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Signed Integer      ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_adp ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                       ;
++---------------------------------------+------------------------------+
+; Name                                  ; Value                        ;
++---------------------------------------+------------------------------+
+; Number of entity instances            ; 1                            ;
+; Entity Instance                       ; fluctuator:u|LPM_MULT:u_mult ;
+;     -- LPM_WIDTHA                     ; 18                           ;
+;     -- LPM_WIDTHB                     ; 18                           ;
+;     -- LPM_WIDTHP                     ; 36                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                           ;
+;     -- USE_EAB                        ; OFF                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                           ;
++---------------------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluctuator:u"                                                                                   ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; random           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; random2          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; fluctuator[7..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out_valid        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 70                          ;
+; cycloneiii_ff         ; 97                          ;
+;     CLR               ; 18                          ;
+;     ENA               ; 9                           ;
+;     ENA CLR           ; 50                          ;
+;     ENA SLD           ; 18                          ;
+;     plain             ; 2                           ;
+; cycloneiii_io_obuf    ; 40                          ;
+; cycloneiii_lcell_comb ; 164                         ;
+;     arith             ; 57                          ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 19                          ;
+;     normal            ; 107                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 45                          ;
+;         4 data inputs ; 40                          ;
+; cycloneiii_mac_mult   ; 1                           ;
+; cycloneiii_mac_out    ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 4.70                        ;
+; Average LUT depth     ; 2.17                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
+    Info: Processing started: Thu Jun 27 23:42:17 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sample_ledfluctuator -c sample_ledfluctuator
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file fluctuator.vhd
+    Info (12022): Found design unit 1: fluctuator-RTL File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/fluctuator.vhd Line: 55
+    Info (12023): Found entity 1: fluctuator File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/fluctuator.vhd Line: 42
+Info (12021): Found 2 design units, including 1 entities, in source file sample_ledfluctuator.vhd
+    Info (12022): Found design unit 1: sample_ledfluctuator-RTL File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/sample_ledfluctuator.vhd Line: 33
+    Info (12023): Found entity 1: sample_ledfluctuator File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/sample_ledfluctuator.vhd Line: 14
+Info (12127): Elaborating entity "sample_ledfluctuator" for the top level hierarchy
+Info (12128): Elaborating entity "fluctuator" for hierarchy "fluctuator:u" File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/sample_ledfluctuator.vhd Line: 93
+Info (12128): Elaborating entity "LPM_MULT" for hierarchy "fluctuator:u|LPM_MULT:u_mult" File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/fluctuator.vhd Line: 87
+Info (12130): Elaborated megafunction instantiation "fluctuator:u|LPM_MULT:u_mult" File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/fluctuator.vhd Line: 87
+Info (12133): Instantiated megafunction "fluctuator:u|LPM_MULT:u_mult" with the following parameter: File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/fluctuator.vhd Line: 87
+    Info (12134): Parameter "LPM_WIDTHA" = "18"
+    Info (12134): Parameter "LPM_WIDTHB" = "18"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_WIDTHP" = "36"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_PIPELINE" = "0"
+    Info (12134): Parameter "LPM_TYPE" = "LPM_MULT"
+    Info (12134): Parameter "LPM_HINT" = "MAXIMIZE_SPEED=5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_adp.tdf
+    Info (12023): Found entity 1: mult_adp File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/db/mult_adp.tdf Line: 28
+Info (12128): Elaborating entity "mult_adp" for hierarchy "fluctuator:u|LPM_MULT:u_mult|mult_adp:auto_generated" File: c:/develop/quartus/17.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 376
+Info (13000): Registers with preset signals will power-up high File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/fluctuator.vhd Line: 106
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "QSPI_CE_N" is stuck at VCC File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/sample_ledfluctuator.vhd Line: 21
+    Warning (13410): Pin "QSPI_SCK" is stuck at GND File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/sample_ledfluctuator.vhd Line: 22
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register fluctuator:u|state will power up to High File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledfluctuator/fluctuator.vhd Line: 57
+Info (17049): 11 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 251 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 26 output pins
+    Info (21060): Implemented 40 bidirectional pins
+    Info (21061): Implemented 179 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Thu Jun 27 23:42:40 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:38
+
+
