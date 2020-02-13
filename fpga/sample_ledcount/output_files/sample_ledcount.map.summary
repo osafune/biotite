@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Jun 26 00:21:17 2019
+Analysis & Synthesis Status : Successful - Fri Nov 08 19:17:43 2019
 Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 Revision Name : sample_ledcount
 Top-level Entity Name : sample_ledcount
 Family : MAX 10
-Total logic elements : 109
-    Total combinational functions : 109
-    Dedicated logic registers : 40
-Total registers : 40
+Total logic elements : 174
+    Total combinational functions : 174
+    Dedicated logic registers : 42
+Total registers : 42
 Total pins : 70
 Total virtual pins : 0
 Total memory bits : 0

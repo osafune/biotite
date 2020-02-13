@@ -63,7 +63,11 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
-set_global_assignment -name STRATIX_JTAG_USER_CODE A0190625
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
+set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
+set_global_assignment -name STRATIX_JTAG_USER_CODE A0191108
 
 
 
@@ -152,6 +156,7 @@ set_location_assignment PIN_110 -to QSPI_SCK
 # Project files Assignments
 # ==========================
 
+set_global_assignment -name VERILOG_FILE rgb_lampy.v
 set_global_assignment -name VHDL_FILE sample_ledcount.vhd
 set_global_assignment -name SDC_FILE biotite_top.sdc
 

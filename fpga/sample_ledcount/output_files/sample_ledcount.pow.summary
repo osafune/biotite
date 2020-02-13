@@ -1,12 +1,12 @@
-Power Analyzer Status : Successful - Wed Jun 26 00:21:38 2019
+Power Analyzer Status : Successful - Fri Nov 08 19:18:06 2019
 Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 Revision Name : sample_ledcount
 Top-level Entity Name : sample_ledcount
 Family : MAX 10
 Device : 10M08SCE144C8G
 Power Models : Final
-Total Thermal Power Dissipation : 171.12 mW
-Core Dynamic Thermal Power Dissipation : 4.32 mW
+Total Thermal Power Dissipation : 171.16 mW
+Core Dynamic Thermal Power Dissipation : 4.43 mW
 Core Static Thermal Power Dissipation : 110.76 mW
-I/O Thermal Power Dissipation : 56.04 mW
+I/O Thermal Power Dissipation : 55.97 mW
 Power Estimation Confidence : Low: user provided insufficient toggle rate data

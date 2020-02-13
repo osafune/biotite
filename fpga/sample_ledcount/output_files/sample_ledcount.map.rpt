@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sample_ledcount
-Wed Jun 26 00:21:17 2019
+Fri Nov 08 19:17:43 2019
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -14,9 +14,11 @@ Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "rgb_lampy:u0"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -42,15 +44,15 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                  ;
 +------------------------------------+----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 26 00:21:17 2019                    ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 08 19:17:43 2019                    ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                      ; sample_ledcount                                          ;
 ; Top-level Entity Name              ; sample_ledcount                                          ;
 ; Family                             ; MAX 10                                                   ;
-; Total logic elements               ; 109                                                      ;
-;     Total combinational functions  ; 109                                                      ;
-;     Dedicated logic registers      ; 40                                                       ;
-; Total registers                    ; 40                                                       ;
+; Total logic elements               ; 174                                                      ;
+;     Total combinational functions  ; 174                                                      ;
+;     Dedicated logic registers      ; 42                                                       ;
+; Total registers                    ; 42                                                       ;
 ; Total pins                         ; 70                                                       ;
 ; Total virtual pins                 ; 0                                                        ;
 ; Total memory bits                  ; 0                                                        ;
@@ -164,13 +166,14 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
-; sample_ledcount.vhd              ; yes             ; User VHDL File  ; C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+; rgb_lampy.v                      ; yes             ; User Verilog HDL File  ; C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/rgb_lampy.v         ;         ;
+; sample_ledcount.vhd              ; yes             ; User VHDL File         ; C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -178,20 +181,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 109            ;
+; Estimated Total logic elements              ; 174            ;
 ;                                             ;                ;
-; Total combinational functions               ; 109            ;
+; Total combinational functions               ; 174            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 48             ;
-;     -- 3 input functions                    ; 6              ;
-;     -- <=2 input functions                  ; 55             ;
+;     -- 4 input functions                    ; 105            ;
+;     -- 3 input functions                    ; 13             ;
+;     -- <=2 input functions                  ; 56             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 84             ;
-;     -- arithmetic mode                      ; 25             ;
+;     -- normal mode                          ; 148            ;
+;     -- arithmetic mode                      ; 26             ;
 ;                                             ;                ;
-; Total registers                             ; 40             ;
-;     -- Dedicated logic registers            ; 40             ;
+; Total registers                             ; 42             ;
+;     -- Dedicated logic registers            ; 42             ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 70             ;
@@ -199,19 +202,20 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 40             ;
-; Total fan-out                               ; 538            ;
-; Average fan-out                             ; 1.64           ;
+; Maximum fan-out                             ; 42             ;
+; Total fan-out                               ; 797            ;
+; Average fan-out                             ; 2.01           ;
 +---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-----------------+--------------+
-; |sample_ledcount           ; 109 (109)           ; 40 (40)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 70   ; 0            ; 0          ; |sample_ledcount    ; sample_ledcount ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name           ; Entity Name     ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-----------------+--------------+
+; |sample_ledcount           ; 174 (61)            ; 42 (12)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 70   ; 0            ; 0          ; |sample_ledcount              ; sample_ledcount ; work         ;
+;    |rgb_lampy:u0|          ; 113 (113)           ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |sample_ledcount|rgb_lampy:u0 ; rgb_lampy       ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -220,14 +224,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 40    ;
+; Total registers                              ; 42    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 9     ;
+; Number of registers using Clock Enable       ; 12    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |sample_ledcount|rgb_lampy:u0|g_value_sig[7] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |sample_ledcount|rgb_lampy:u0|r_value_sig[7] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |sample_ledcount|rgb_lampy:u0|b_value_sig[6] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "rgb_lampy:u0" ;
++-------+-------+----------+---------------+
+; Port  ; Type  ; Severity ; Details       ;
++-------+-------+----------+---------------+
+; reset ; Input ; Info     ; Stuck at GND  ;
++-------+-------+----------+---------------+
 
 
 +-----------------------------------------------------+
@@ -236,23 +260,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 70                          ;
-; cycloneiii_ff         ; 40                          ;
-;     ENA               ; 9                           ;
-;     plain             ; 31                          ;
+; cycloneiii_ff         ; 42                          ;
+;     ENA               ; 12                          ;
+;     plain             ; 30                          ;
 ; cycloneiii_io_obuf    ; 40                          ;
-; cycloneiii_lcell_comb ; 132                         ;
-;     arith             ; 25                          ;
-;         2 data inputs ; 24                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 107                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 26                          ;
+; cycloneiii_lcell_comb ; 197                         ;
+;     arith             ; 26                          ;
 ;         2 data inputs ; 26                          ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 48                          ;
+;     normal            ; 171                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 25                          ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 105                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.47                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.01                        ;
 +-----------------------+-----------------------------+
 
 
@@ -271,29 +294,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
-    Info: Processing started: Wed Jun 26 00:20:57 2019
+    Info: Processing started: Fri Nov 08 19:17:26 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sample_ledcount -c sample_ledcount
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file rgb_lampy.v
+    Info (12023): Found entity 1: rgb_lampy File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/rgb_lampy.v Line: 32
 Info (12021): Found 2 design units, including 1 entities, in source file sample_ledcount.vhd
-    Info (12022): Found design unit 1: sample_ledcount-RTL File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd Line: 33
-    Info (12023): Found entity 1: sample_ledcount File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd Line: 14
+    Info (12022): Found design unit 1: sample_ledcount-RTL File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd Line: 34
+    Info (12023): Found entity 1: sample_ledcount File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd Line: 15
 Info (12127): Elaborating entity "sample_ledcount" for the top level hierarchy
+Info (12128): Elaborating entity "rgb_lampy" for hierarchy "rgb_lampy:u0" File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd Line: 105
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "QSPI_CE_N" is stuck at VCC File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd Line: 21
-    Warning (13410): Pin "QSPI_SCK" is stuck at GND File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd Line: 22
+    Warning (13410): Pin "QSPI_CE_N" is stuck at VCC File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd Line: 22
+    Warning (13410): Pin "QSPI_SCK" is stuck at GND File: C:/PROJECT/c87_sodalite/CARD/fpga/sample_ledcount/sample_ledcount.vhd Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 179 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 244 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 26 output pins
     Info (21060): Implemented 40 bidirectional pins
-    Info (21061): Implemented 109 logic cells
+    Info (21061): Implemented 174 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4810 megabytes
-    Info: Processing ended: Wed Jun 26 00:21:17 2019
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:39
+    Info: Peak virtual memory: 4797 megabytes
+    Info: Processing ended: Fri Nov 08 19:17:43 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:34
 
 

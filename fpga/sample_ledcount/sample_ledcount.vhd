@@ -3,13 +3,14 @@
 --
 --   DEGISN : S.OSAFUNE (J-7SYSTEM WORKS LIMITED)
 --   DATE   : 2019/06/25 -> 2019/06/25
+--   MODIFY : 2019/11/08
 --
 -- ===================================================================
 
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
+use IEEE.std_logic_arith.all;
 
 entity sample_ledcount is
 	port(
@@ -56,18 +57,30 @@ architecture RTL of sample_ledcount is
 	signal clock_sig		: std_logic;
 	signal reset_sig		: std_logic;
 
-	signal clkdiv_count_reg	: std_logic_vector(26 downto 0);
-	signal pwmtiming_sig	: std_logic;
-	signal pwmwidth_sig		: std_logic_vector(7 downto 0);
-	signal pwmcompare_sig	: std_logic_vector(7 downto 0);
-	signal pwmcount_sig		: std_logic_vector(7 downto 0);
-	signal pwmupdown_sig	: std_logic;
-	signal pwmout_reg		: std_logic;
-
 	signal seg1_reg			: std_logic_vector(3 downto 0);
 	signal seg2_reg			: std_logic_vector(3 downto 0);
 	signal seg3_reg			: std_logic_vector(3 downto 0);
-	signal seg_pwmmask_sig	: std_logic_vector(6 downto 0);
+
+	component rgb_lampy is
+	port(
+		clock		: in  std_logic;
+		reset		: in  std_logic;
+		countup		: out std_logic;
+
+		pwm_red		: out std_logic;
+		pwm_green	: out std_logic;
+		pwm_blue	: out std_logic
+	);
+	end component;
+	signal countup_sig		: std_logic;
+	signal led_r_sig		: std_logic;
+	signal led_g_sig		: std_logic;
+	signal led_b_sig		: std_logic;
+
+	signal seg_pwmmask1_sig	: std_logic_vector(6 downto 0);
+	signal seg_pwmmask2_sig	: std_logic_vector(6 downto 0);
+	signal seg_pwmmask3_sig	: std_logic_vector(6 downto 0);
+
 
 begin
 
@@ -89,29 +102,17 @@ begin
 	-- LEDをじわっと点滅 
 	----------------------------------------------
 
-	pwmupdown_sig <= clkdiv_count_reg(clkdiv_count_reg'left);
-	pwmwidth_sig  <= clkdiv_count_reg(clkdiv_count_reg'left-1 downto clkdiv_count_reg'left-8);
-	pwmcompare_sig<= not pwmwidth_sig when(pwmupdown_sig = '1') else pwmwidth_sig;
-	pwmcount_sig  <= clkdiv_count_reg(7 downto 0);
+	u0 : rgb_lampy
+	port map(
+		clock		=> clock_sig,
+		reset		=> reset_sig,
+		countup		=> countup_sig,
+		pwm_red		=> led_r_sig,
+		pwm_green	=> led_g_sig,
+		pwm_blue	=> led_b_sig
+	);
 
-	process (clock_sig, reset_sig) begin
-		if (reset_sig = '1') then
-			clkdiv_count_reg <= (others=>'0');
-			pwmout_reg <= '0';
-
-		elsif (clock_sig'event and clock_sig = '1') then
-			clkdiv_count_reg <= clkdiv_count_reg + 1;
-
-			if (pwmcount_sig = pwmcompare_sig) then
-				pwmout_reg <= '1';
-			elsif (pwmcount_sig = 0) then
-				pwmout_reg <= '0';
-			end if;
-
-		end if;
-	end process;
-
-	USERLED <= (pwmout_reg & pwmout_reg & pwmout_reg) xor USERKEY;
+	USERLED <= (led_r_sig & led_g_sig & led_b_sig) xor USERKEY;
 
 
 	----------------------------------------------
@@ -125,7 +126,7 @@ begin
 			seg3_reg <= (others=>'0');
 
 		elsif (clock_sig'event and clock_sig = '1') then
-			if (clkdiv_count_reg(24 downto 0) = 0) then
+			if (countup_sig = '1') then
 				seg3_reg <= seg3_reg + 1;
 				if (seg3_reg = 9) then
 					if (seg2_reg = 9) then
@@ -148,11 +149,13 @@ begin
 		end if;
 	end process;
 
-	seg_pwmmask_sig <= (others=>pwmout_reg);
+	seg_pwmmask1_sig <= (others=>led_r_sig);
+	seg_pwmmask2_sig <= (others=>led_g_sig);
+	seg_pwmmask3_sig <= (others=>led_b_sig);
 
-	LED7SEG1 <= not(bcd2deg7(seg1_reg) and seg_pwmmask_sig);
-	LED7SEG2 <= not(bcd2deg7(seg2_reg) and seg_pwmmask_sig);
-	LED7SEG3 <= not(bcd2deg7(seg3_reg) and seg_pwmmask_sig);
+	LED7SEG1 <= not(bcd2deg7(seg1_reg) and seg_pwmmask1_sig);
+	LED7SEG2 <= not(bcd2deg7(seg2_reg) and seg_pwmmask2_sig);
+	LED7SEG3 <= not(bcd2deg7(seg3_reg) and seg_pwmmask3_sig);
 
 
 
