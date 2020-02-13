@@ -12,7 +12,7 @@ Type-Cのカードエッジコネクタの他、シングルラインのPMODが�
 
 Board Layout
 ------------
-<img src="https://raw.githubusercontent.com/osafune/biotite/master/img/biotite_layout.jpg" width="608" height="359">
+<img src="https://raw.githubusercontent.com/osafune/biotite/master/img/biotite_layout.png" width="608" height="359">
 
 - MAX10 10M08SCE144C8G
 	- デバイスパッケージ:EQFP144
