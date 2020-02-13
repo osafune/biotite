@@ -3,7 +3,7 @@ BIOTITE - MAX10 FPGA CARD
 
 Overview
 --------
-<img src="https://raw.githubusercontent.com/osafune/biotite/master/img/biotite_image.jpg" width="600" height="512">
+<img src="https://raw.githubusercontent.com/osafune/biotite/master/img/biotite_image.png" width="600" height="512">
 
 BOTITE（ビオタイト）はクレジットカードサイズのMAX10 FPGAカードです。84mm×53mm×2.6mmの超薄型サイズでいつも財布の中に入れておけます。
 オンボードにはタクタイルスイッチ、7セグ配置のLED、USB-Blaster互換機能として使用可能なUSBマイコンを搭載しています。
