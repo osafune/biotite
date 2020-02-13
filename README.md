@@ -25,7 +25,7 @@ Board Layout
 	- 内蔵OSC:1個
 	- 内蔵ADC:なし
 	- デュアルコンフィグレーション機能:なし
-<br>
+
 - Lyonteck LY68L6400(ES)
 	- デバイスパッケージ:SOIC-8 (150mil)
 	- メモリ:64Mbit PSRAM
